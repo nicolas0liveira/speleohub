@@ -1,0 +1,14 @@
+{% extends "layout/basic" %}
+
+{% set menu = 'home' %}
+
+{% block body %}
+{{ request.contextPath }}
+  <h2>{{ message('welcome') }}</h2>
+  <div class="row">
+      <div class="col-md-12">
+        Testeee
+        <img class="img-responsive" src="{{ href('/resources/images/logo.png') }}"/>
+      </div>
+  </div>
+{% endblock %}

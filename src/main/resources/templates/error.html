@@ -1,0 +1,22 @@
+{% extends "layout/basic" %}
+
+{% set menu = 'error' %}
+
+{% block body %}
+    <img src="{{ href('/resources/images/logo.png') }}"/>
+    <h2>Something happened...</h2>
+    <p>{{ message }}</p>
+
+    Erros:
+    {% for err in getAllErrors('formName') %}
+    <p>{{ err }}</p>
+    {% endfor %}
+
+    {% for err in getGlobalErrors('formName') %}
+        <p>{{ err }}</p>
+    {% endfor %}
+
+    {% for err in getFieldErrors('formName', 'fieldName') %}
+        <p>{{ err }}</p>
+    {% endfor %}
+{% endblock %}
